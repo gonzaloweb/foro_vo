@@ -51,8 +51,14 @@ function letraRepetida($longitud){
     $letras =  str_split($quitaEspacio);
     $letraMayor = array_count_values($letras); // cuenta y ordena de mayor a menor los valores del array
     arsort($letraMayor);
+
+    if (reset($letraMayor) == 1) {
+        return "No hay letras repetidas";
+    } else {
     return array_key_first($letraMayor);
 
+    }
+   
     
 }
 
@@ -62,9 +68,14 @@ function palabraRepetida($longitud): string {
     $cuentaPalabras = str_word_count($comentarioLimpio, 1 );
     
     $palabras = array_count_values($cuentaPalabras); // cuenta y ordena de mayor a menor los valores del array
+
     arsort($palabras);
+
+     if (reset($palabras) == 1) {
+        return "No hay palabras repetidas";
+    } else {
     return array_key_first($palabras);
 
-    
+    }
 }
 
